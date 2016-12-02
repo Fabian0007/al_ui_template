@@ -11,7 +11,8 @@ define( [ 'angular', 'tmdb/partials/time/TimeController'],
                 templateUrl: '/tmdb/partials/time/time.html',
                 restrict: 'E',
                 scope: {
-                    details: '=ngModel'
+                    datemovie: '=',
+                    runtime: '=',
                 }
             };
         };
