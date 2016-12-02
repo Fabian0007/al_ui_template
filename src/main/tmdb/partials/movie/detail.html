@@ -11,14 +11,9 @@
         </span>
         <br />
         <div class="sub-details row table-row" style="margin: 20px;">
-            <div class="col-md-6">
-                <div class="detail">
-                    Release Date {{ detail.details.release_date | date }}
-                </div>
-                <div class="detail">
-                    Running Time {{ detail.details.runtime }} minutes
-                </div>
-            </div>
+            date: {{detail.details.release_date}}
+            <time ng-model="detail.details" />
+            
             <div class="col-md-6">
                 <div class="detail">
                     Budget ${{ detail.details.budget | number }} USD

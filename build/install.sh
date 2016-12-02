@@ -42,7 +42,7 @@ BREW=`which brew`
 if [ -z $BREW ]
     then
         echo -e "${red}Homebrew not found, can not continue.${NC}"
-        exit 1
+        #exit 1
     else
         echo -e "${blue}Found Homebrew at $BREW${NC}"
 fi

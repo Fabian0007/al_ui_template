@@ -25,6 +25,9 @@ define([ 'angular',
          'tmdb/partials/search/SearchController',
          'tmdb/partials/home/HomeController',
          'tmdb/partials/movie/MovieController',
+         
+         'tmdb/partials/time/TimeController',
+         
          'tmdb/partials/person/PersonController',
          'tmdb/partials/remoteImageLoader/RemoteImageLoader',
          'tmdb/directives/search',
@@ -35,12 +38,13 @@ define([ 'angular',
          'tmdb/directives/movieDetail',
          'tmdb/directives/similarMovies',
          'tmdb/directives/movieCast',
-         'tmdb/directives/movieCrew' ], 
+         'tmdb/directives/movieCrew',
+         'tmdb/directives/time'], 
     function( angular, config, $resource, $location, LocalStorageModule, 
-              TMDBAPIService, SearchController, HomeController, MovieController, PersonController, 
+              TMDBAPIService, SearchController, HomeController, MovieController, TimeController, PersonController, 
               RemoteImageLoader, searchDirective, popularMoviesDirective, 
               personDetailDirective, personCrewDirective, personCastDirective,
-              movieDetailDirective, similarMoviesDirective, movieCastDirective, movieCrewDirective ) {
+              movieDetailDirective, similarMoviesDirective, movieCastDirective, movieCrewDirective, timeDirective ) {
     	"use strict";
 
         /** @constructs app */
@@ -65,6 +69,8 @@ define([ 'angular',
         app.controller( "MovieController", MovieController );
         app.controller( "PersonController", PersonController);
         app.controller( "RemoteImageLoader", RemoteImageLoader );
+        
+        app.controller( "TimeController", TimeController );
 
         app.directive( "popularMovies", popularMoviesDirective );
         app.directive( "personDetail", personDetailDirective );
@@ -74,6 +80,7 @@ define([ 'angular',
         app.directive( "similarMovies", similarMoviesDirective );
         app.directive( "movieCast", movieCastDirective );
         app.directive( "movieCrew", movieCrewDirective );
+        app.directive( "time", timeDirective );
 
         app.config(['$routeProvider', function($routeProvider) {
             $routeProvider.when( '/', { templateUrl: '/tmdb/partials/home/home.html', controller: 'HomeController' } );
